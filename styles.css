@@ -14,7 +14,7 @@ html {
 }
 
 /* Reduce scale slightly on narrow screens to avoid overflow */
-@media (max-width: 700px) {
+@media (max-width: 43.75rem) {
   html { font-size: 112%; }
 }
   
@@ -22,7 +22,7 @@ h1 {
   font-family: "Darker Grotesque", sans-serif;
   font-weight: 500;
   font-size: 2.5rem;
-  letter-spacing: 4px;
+  letter-spacing: 0.25rem;
   text-align: right;
 }
 
@@ -30,14 +30,14 @@ h2 {
   font-family: "Darker Grotesque", sans-serif;
   font-weight: 300;
   font-size: 1.8rem;
-  letter-spacing: 4px;
+  letter-spacing: 0.25rem;
   text-align: right;
 }
 
 p {
   font-family: "Darker Grotesque", sans-serif;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
   line-height: 1.5;
   text-align: right;
 }
@@ -47,18 +47,28 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
-    border-bottom: 1px solid #333;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 1.25rem 2.5rem;
+    border-bottom: 0.0625rem solid #333;
   }
   
   .logo {
     font-weight: bold;
     color: orange;
-    font-size: 1.4rem; /* increased 40% */
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
   }
   
   nav {
-    margin-left:200px;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    flex: 1;
+    justify-content: center;
+    margin-left: 14rem;
   }
 
 /* First, reset default underline and ensure link is positioned relatively */
@@ -66,9 +76,10 @@ nav a {
   position: relative;
   text-decoration: none;
   color: white;
-  padding: 6px 14px;
+  padding: 0.375rem 0.875rem;
   transition: color 0.3s ease;
   text-transform: uppercase;
+  font-size: 1.5rem;
 }
 
 /* Create the underline with ::after, initially invisible / 0-width */
@@ -78,7 +89,7 @@ nav a::after {
   left: 0;
   bottom: 0;
   width: 0%;
-  height: 2px;             /* thickness of the underline */
+  height: 0.125rem;             /* thickness of the underline */
   background: orange;      /* underline color */
   transition: width 0.3s ease;
 }
@@ -93,12 +104,17 @@ nav a:focus::after {
   width: 100%;
 }
 
+  .socials {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
   
   .socials img {
-    width: 30px;
-    margin-left: 10px;
+    width: 1.875rem;
     display: inline-block;
-    padding: 8px;
+    padding: 0.5rem;
     border-radius: 50%;
     background: transparent;
     box-sizing: content-box;
@@ -108,7 +124,7 @@ nav a:focus::after {
 
   .socials img:hover {
     transform: scale(1.18);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+    box-shadow: 0 0.5rem 1.125rem rgba(0,0,0,0.45);
     filter: none;
   }
 
@@ -119,13 +135,34 @@ nav a:focus::after {
   .socials img[alt="Sketchfab"]:hover { background: #00d5ff; }
   .socials img[alt="Itchio"]:hover { background: #ff002f; }
 
+  /* Responsive header: stack vertically only on very small screens */
+  @media (max-width: 31.25rem) {
+    header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    
+    .logo {
+      text-align: center;
+      justify-content: center;
+    }
+    
+    nav,
+    .socials {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
   
 .intro {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  padding: 50px 10px;
-  gap: 40px;
+  padding: 3.125rem 0.625rem;
+  gap: 2.5rem;
 
   background:
     linear-gradient(
@@ -144,8 +181,8 @@ nav a:focus::after {
 
   
   .outline-art {
-    width: 180px;
-    height: 360px;
+    width: 11.25rem;
+    height: 22.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,39 +194,39 @@ nav a:focus::after {
   }
 
   .outline-art .profile-art {
-    width: 180px;
-    height: 360px;
+    width: 11.25rem;
+    height: 22.5rem;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     display: block;
   }
 
   .intro-text {
     margin-left: 0;
-    padding-right: px;
+    padding-right: 0;
     align-self: flex-start;
     order: 1; /* ensure text appears before the art */
     text-align: right;
   }
 
   /* Responsive: stack image above text on narrow screens */
-  @media (max-width: 700px) {
+  @media (max-width: 43.75rem) {
     .intro {
       flex-direction: column;
       align-items: center;
-      padding: 20px;
-      gap: 20px;
+      padding: 1.25rem;
+      gap: 1.25rem;
     }
 
     .outline-art {
-      width: 140px;
-      height: 280px;
+      width: 8.75rem;
+      height: 17.5rem;
       background-size: contain;
     }
 
     .outline-art .profile-art {
-      width: 140px;
-      height: 280px;
+      width: 8.75rem;
+      height: 17.5rem;
     }
 
     .intro-text {
@@ -203,13 +240,13 @@ nav a:focus::after {
 
 
 /* About page / cards grid (matches screenshot layout) */
-.about {
-  padding: 20px 40px 60px;
+  .about {
+  padding: 1.25rem 2.5rem 3.75rem;
 }
 
 /* Full-bleed hero above About section */
 
-.about-hero {
+  .about-hero {
   width: 100vw; /* full-bleed */
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -218,7 +255,7 @@ nav a:focus::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 150px 0;
+  padding: 9.375rem 0;
   background-color: #000; /* fallback if video not available */
 }
 
@@ -240,26 +277,36 @@ nav a:focus::after {
 }
 
 .about-hero-pic {
-  width: 300px;
-  height: 300px;
+  width: 18.75rem;
+  height: 18.75rem;
   object-fit: cover;
   border-radius: 50%;
-  border: 6px solid rgba(0,0,0,0.5);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  border: 0.375rem solid rgba(0,0,0,0.5);
+  box-shadow: 0 0.75rem 1.875rem rgba(0,0,0,0.6);
   display: block;
   margin: 0 auto;
 }
 
 .about-hero-name {
-  margin-top: 50px;
+  margin-top: 3.125rem;
   font-size: 3.2rem;
-  letter-spacing: 10px;
+  letter-spacing: 0.625rem;
   color: rgb(255, 153, 0);
 }
 
-@media (max-width: 900px) {
-  .about-hero { padding: 40px 0; }
-  .about-hero-pic { width: 140px; height: 140px; }
+.about-hero-subtitle {
+  margin-top: 0.75rem;
+  font-size: 2.25rem;
+  letter-spacing: 0.15rem;
+  color: #cccccc;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 56.25rem) {
+  .about-hero { padding: 2.5rem 0; }
+  .about-hero-pic { width: 8.75rem; height: 8.75rem; }
   .about-hero-name { font-size: 1.5rem; }
   .about-hero-video { opacity: 0.5; }
 }
@@ -272,45 +319,45 @@ nav a:focus::after {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 1200px;
+  gap: 1.5rem;
+  max-width: 75rem;
   margin: 0 auto;
 }
 
 /* New: dark-gray container holding two plain columns (no .card wrappers) */
 .about-panel {
   background: #121214; /* dark gray container */
-  padding: 28px;
-  border-radius: 12px;
-  max-width: 1200px;
+  padding: 1.75rem;
+  border-radius: 0.75rem;
+  max-width: 75rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  gap: 1.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.6);
 }
 
 .about-panel .about-col { color: #e6e6e6; }
-.about-panel h4 { color: orange; margin-top: 0; font-size: 1.05rem; letter-spacing: 1.2px; }
+.about-panel h4 { color: orange; margin-top: 0; font-size: 1.05rem; letter-spacing: 0.075rem; }
 .about-panel p { color: #d7d7d7; text-align: left; }
 
-@media (max-width: 900px) {
-  .about-panel { grid-template-columns: 1fr; padding: 20px; }
+@media (max-width: 56.25rem) {
+  .about-panel { grid-template-columns: 1fr; padding: 1.25rem; }
   .about-col.about-full { grid-column: 1; }
 }
 
 /* Full-width sections below the two-column layout */
 .about-col.about-full {
   grid-column: 1 / -1; /* span all columns */
-  margin-top: 12px;
+  margin-top: 0.75rem;
 }
 
 .about-col.about-full h4 {
   color: orange;
   margin-top: 0;
   font-size: 1.05rem;
-  letter-spacing: 1.2px;
-  margin-bottom: 10px;
+  letter-spacing: 0.075rem;
+  margin-bottom: 0.625rem;
 }
 
 .experience-list {
@@ -319,12 +366,12 @@ nav a:focus::after {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
   color: #d7d7d7;
 }
 
 .experience-list li {
-  padding: 8px 0;
+  padding: 0.5rem 0;
   text-align: left;
   line-height: 1.5;
 }
@@ -336,37 +383,37 @@ nav a:focus::after {
 
 .card {
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.04);
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  border: 0.0625rem solid rgba(255,255,255,0.04);
+  padding: 1.125rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.375rem 1.125rem rgba(0,0,0,0.45);
 }
 
-.card h4 {
+  .card h4 {
   color: orange;
-  margin: 0 0 12px;
+  margin: 0 0 0.75rem;
   font-size: 1.05rem;
-  letter-spacing: 1.5px;
-  border-bottom: 2px solid rgba(255,165,0,0.15);
-  padding-bottom: 8px;
+  letter-spacing: 0.09375rem;
+  border-bottom: 0.125rem solid rgba(255,165,0,0.15);
+  padding-bottom: 0.5rem;
 }
 
 .card p { color: #d7d7d7; text-align: left; }
 
-.skill-list { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 10px; }
-.skill-badge { display: inline-block; background: orange; color: #111; padding: 8px 12px; border-radius: 6px; font-weight: 700; width: fit-content; }
+.skill-list { list-style: none; padding: 0; margin: 0.5rem 0 0; display: flex; flex-direction: column; gap: 0.625rem; }
+.skill-badge { display: inline-block; background: orange; color: #111; padding: 0.5rem 0.75rem; border-radius: 0.375rem; font-weight: 700; width: fit-content; }
 
-.education .edu-meta { color: #cfcfcf; margin-top: 6px; }
-.language-list { list-style: none; padding: 0; margin: 8px 0 0; color: #d0d0d0; }
-.language-list li { padding: 6px 0; display: flex; justify-content: space-between; }
+.education .edu-meta { color: #cfcfcf; margin-top: 0.375rem; }
+.language-list { list-style: none; padding: 0; margin: 0.5rem 0 0; color: #d0d0d0; }
+.language-list li { padding: 0.375rem 0; display: flex; justify-content: space-between; }
 .language-list .lang-level { color: #7be58d; font-weight: 700; }
 
-.software-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px; }
+.software-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.5rem; }
 
 .software-pill {
   background: rgba(255,255,255,0.04);
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -383,11 +430,11 @@ nav a:focus::after {
 }
 
 /* layout for software meta (level above years) */
-.software-meta {
+  .software-meta {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 2px;
+  gap: 0.125rem;
   font-size: 1rem;
 }
 
@@ -410,9 +457,9 @@ nav a:focus::after {
 
 /* reveal on hover — pill expands downward */
 .software-pill:hover .software-desc {
-  max-height: 300px;
+  max-height: 18.75rem;
   opacity: 1;
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 /* per-software hover colors */
@@ -427,23 +474,23 @@ nav a:focus::after {
 
 .software-pill:hover .muted { color: rgba(0,0,0,0.6); }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .about-grid { grid-template-columns: 1fr; }
-  .skill-list { flex-direction: row; flex-wrap: wrap; gap: 8px; }
-  .skill-badge { margin-right: 6px; }
+  .skill-list { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-badge { margin-right: 0.375rem; }
 }
   
   h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+    gap: 0.9375rem;
   }
 
   .projects .grid {
@@ -454,24 +501,24 @@ nav a:focus::after {
   }
 
   /* Projects grid and cards */
-  /* Projects grid: 2 items per row (left: thumbnail, right: content) */
+  /* Projects grid: 4 items in 1 row */
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    max-width: 1200px;
+    grid-template-columns: repeat(4, 12.5rem);
+    gap: 1rem;
     margin: 0 auto;
+    justify-content: center;
   }
 
   .project {
     position: relative;
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
     align-items: flex-start;
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 24px;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
     transition: all 200ms ease;
     overflow: hidden;
   }
@@ -482,7 +529,7 @@ nav a:focus::after {
     bottom: 0;
     left: 0;
     width: 0%;
-    height: 4px;
+    height: 0.25rem;
     background: rgb(72, 0, 255);
     transition: width 200ms ease;
   }
@@ -490,8 +537,8 @@ nav a:focus::after {
   .project:hover {
     background: rgba(44, 3, 132, 0.15);
     border-color: rgba(255, 165, 0, 0.5);
-    transform: translateY(-8px) scale(1.08);
-    box-shadow: 0 12px 30px rgba(255, 165, 0, 0.3);
+    transform: translateY(-0.5rem) scale(1.08);
+    box-shadow: 0 0.75rem 1.875rem rgba(255, 165, 0, 0.3);
   }
 
   .project:hover::before {
@@ -500,16 +547,16 @@ nav a:focus::after {
 
   .project h3 {
     font-size: 1.3rem;
-    margin: 0 0 12px;
+    margin: 0 0 0.75rem;
     text-align: left;
   }
 
   /* Project thumbnail: fixed width on left */
   .project .project-thumbnail {
-    width: 280px;
-    height: 210px;
-    object-fit: cover;
-    border-radius: 6px;
+    width: 17.5rem;
+    height: 13.125rem;
+      border: 0.0625rem solid rgba(0,0,0,0.5);
+    border-radius: 0.375rem;
     display: block;
     flex-shrink: 0;
   }
@@ -523,7 +570,7 @@ nav a:focus::after {
 
   .project-content p {
     text-align: left;
-    margin: 0 0 16px;
+    margin: 0 0 1rem;
   }
 
   .project-content a {
@@ -531,9 +578,9 @@ nav a:focus::after {
     color: orange;
     text-decoration: none;
     font-size: 0.95rem;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     border: 1px solid orange;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     transition: all 150ms ease;
     align-self: flex-start;
   }
@@ -546,10 +593,10 @@ nav a:focus::after {
   /* Clickable screenshot tiles for itch.io projects */
   .projects-grid .project-link {
     display: block;
-    width: 200;
-    border-radius: 8px;
+    width: 12.5rem;
+    border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.4);
     transition: transform 180ms ease, box-shadow 180ms ease;
   }
 
@@ -568,11 +615,11 @@ nav a:focus::after {
   .grid img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 0.5rem;
   }
   
   .see-more {
-    margin-top: 16px;
+    margin-top: 1rem;
     font-size: 0.95rem;
     color: orange;
     cursor: pointer;
@@ -590,9 +637,9 @@ nav a:focus::after {
   .sketchfab-carousel {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.5rem;
     position: relative;
-    padding: 12px 0 36px; /* room for dots */
+    padding: 0.5rem 0 1.5rem; /* room for dots */
   }
 
   .carousel-viewport {
@@ -608,8 +655,51 @@ nav a:focus::after {
 
   .carousel-slide {
     flex: 0 0 100%;
-    padding: 0 8px;
+    padding: 0 0.5rem;
     box-sizing: border-box;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .carousel-slide-image {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .carousel-slide-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+  }
+
+  .carousel-slide-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .carousel-slide-text h4 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+    color: orange;
+  }
+
+  .carousel-slide-text p {
+    margin: 0;
+    color: #bbbbbb;
+    font-size: 0.875rem;
+  }
+
+  /* Responsive: stack carousel vertically on smaller screens */
+  @media (max-width: 56.25rem) {
+    .carousel-slide {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 
   .sketchfab-placeholder {
@@ -617,7 +707,7 @@ nav a:focus::after {
     aspect-ratio: 16 / 9;
     height: auto;
     background: #0b0b0b;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     overflow: hidden;
     cursor: pointer;
     display: flex;
@@ -635,13 +725,13 @@ nav a:focus::after {
   .sketchfab-play {
     position: absolute;
     z-index: 5;
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.55);
-    border: 2px solid rgba(255,255,255,0.12);
+    border: 0.125rem solid rgba(255,255,255,0.12);
     color: white;
-    font-size: 36px;
+    font-size: 2.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -652,10 +742,10 @@ nav a:focus::after {
     background: rgba(255,255,255,0.06);
     color: white;
     border: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    font-size: 26px;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.5rem;
+    font-size: 1.625rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -666,17 +756,17 @@ nav a:focus::after {
 
   .carousel-dots {
     position: absolute;
-    bottom: 8px;
+    bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
     z-index: 10;
   }
 
   .carousel-dot {
-    width: 10px;
-    height: 10px;
+    width: 0.625rem;
+    height: 0.625rem;
     border-radius: 50%;
     background: rgba(255,255,255,0.18);
     border: 0;
@@ -690,21 +780,21 @@ nav a:focus::after {
 .model-row {
   display: flex;
   align-items: center;
-  gap: 28px;
-  padding: 20px;
+  gap: 1.75rem;
+  padding: 1.25rem;
   height: 100%;
 }
 
 .model-image {
-  width: 1200px;           /* 👈 change size here */
+  width: 75rem;           /* 👈 change size here */
   flex-shrink: 0;
   cursor: pointer;
 }
 
-.model-image img {
+  .model-image img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   object-fit: contain;    /* keeps PNG ratio */
 }
 
@@ -714,7 +804,7 @@ nav a:focus::after {
 
 .model-text h4 {
   font-size: 1.7rem;
-  margin: 0 0 10px;
+  margin: 0 0 0.625rem;
   font-weight: 600;
 }
 
@@ -729,21 +819,21 @@ nav a:focus::after {
 .model-embed {
   width: 100%;
   max-width: none;
-  margin: 28px 0;
+  margin: 1.75rem 0;
   padding: 0;
 }
 
 .model-title {
   font-size: 2rem;
-  margin: 8px 0 12px;
+  margin: 0.5rem 0 0.75rem;
   text-align: left;
   font-weight: 700;
 }
 
- .model-embed-row {
-  display: flex;
-  gap: 20px;
-  align-items: stretch; /* make meta column match iframe height */
+.model-embed-row {
+ display: flex;
+ gap: 1.25rem;
+ align-items: stretch; /* make meta column match iframe height */
 }
 
 .model-embed-left {
@@ -753,35 +843,35 @@ nav a:focus::after {
 .model-meta {
   flex: 1 1 24%;
   box-sizing: border-box;
-  padding: 14px 18px;
+  padding: 0.875rem 1.125rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background: rgba(0,0,0,0.03);
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .model-embed-inner,
 .sketchfab-embed-wrapper {
   width: 100%;
   background: rgba(0,0,0,0.04);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   overflow: hidden;
 }
 
 .sketchfab-embed-wrapper iframe {
   width: 100%;
-  height: 840px; /* scaled up */
+  height: 52.5rem; /* scaled up */
   border: 0;
   display: block;
 }
 
 .model-description {
   width: 75%; /* match the embed (left column) */
-  margin-top: 12px;
-  padding: 14px 18px;
+  margin-top: 0.75rem;
+  padding: 0.875rem 1.125rem;
   background: rgba(255,255,255,0.02);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   color: #dcdcdc;
 }
 /* Override global paragraph alignment for model descriptions */
@@ -797,18 +887,18 @@ nav a:focus::after {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .model-embed-row { flex-direction: column; }
   .model-embed-left, .model-meta { flex: none; width: 100%; }
-  .sketchfab-embed-wrapper iframe { height: 480px; }
-  .model-description { margin-top: 14px; }
+  .sketchfab-embed-wrapper iframe { height: 30rem; }
+  .model-description { margin-top: 0.875rem; }
 }
 
 /* Responsive */
-@media (max-width: 800px) {
+@media (max-width: 50rem) {
   .model-row {
     flex-direction: column;
     text-align: center;
@@ -820,16 +910,16 @@ nav a:focus::after {
 }
 
   /* Projects responsiveness: stack flex items vertically on narrow screens */
-  @media (max-width: 700px) {
+  @media (max-width: 43.75rem) {
     .projects-grid {
-      gap: 16px;
-      padding: 0 16px;
+      gap: 1rem;
+      padding: 0 1rem;
     }
 
     .project {
       flex-direction: column;
-      gap: 16px;
-      padding: 16px;
+      gap: 1rem;
+      padding: 1rem;
     }
 
     .project .project-thumbnail {
@@ -837,12 +927,12 @@ nav a:focus::after {
       height: auto;
     }
   }
-  @media (max-width: 900px) {
-    .sketchfab-placeholder { height: 320px; }
+  @media (max-width: 56.25rem) {
+    .sketchfab-placeholder { height: 20rem; }
   }
 
-  @media (max-width: 700px) {
-    .sketchfab-placeholder { height: 260px; }
-    .carousel-btn { width: 38px; height: 38px; font-size: 23px; }
+  @media (max-width: 43.75rem) {
+    .sketchfab-placeholder { height: 16.25rem; }
+    .carousel-btn { width: 2.375rem; height: 2.375rem; font-size: 1.4375rem; }
   }
   
