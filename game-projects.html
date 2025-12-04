@@ -43,46 +43,222 @@
   <main>
     <section class="projects">
       <h3>GAME PROJECTS</h3>
-      <div class="projects-grid">
+      <div class="projects-grid-detailed">
 
-        <div class="project">
+        <a href="https://miisan.itch.io/ass" target="_blank" rel="noopener" class="project">
           <img src="images/itchio/ass.png" alt="Assimilation" class="project-thumbnail">
           <div class="project-content">
             <h3>Assimilation</h3>
-            <p>Multiplayer experiment / level prototype. (Team project)</p>
-            <a href="https://miisan.itch.io/ass" target="_blank" rel="noopener">Play on itch.io</a>
+            <p class="project-desc">Multiplayer experiment / level prototype. (Team project)</p>
           </div>
-        </div>
+        </a>
 
-        <div class="project">
+        <a href="https://ling-yiyang.itch.io/lost-fins" target="_blank" rel="noopener" class="project">
           <img src="images/itchio/fins.png" alt="Lost Fins" class="project-thumbnail">
           <div class="project-content">
             <h3>Lost Fins</h3>
-            <p>Underwater platformer with exploration mechanics.</p>
-            <a href="https://ling-yiyang.itch.io/lost-fins" target="_blank" rel="noopener">Play on itch.io</a>
+            <p class="project-desc">Underwater platformer with exploration mechanics.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="project">
+        <a href="https://hajimbo.itch.io/sugar-slasher" target="_blank" rel="noopener" class="project">
           <img src="images/itchio/sugar.png" alt="Sugar Slasher" class="project-thumbnail">
           <div class="project-content">
             <h3>Sugar Slasher</h3>
-            <p>Fast-paced action with colourful enemies.</p>
-            <a href="https://hajimbo.itch.io/sugar-slasher" target="_blank" rel="noopener">Play on itch.io</a>
+            <p class="project-desc">Fast-paced action with colourful enemies.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="project">
+        <a href="https://yiirii.itch.io/too-hot-for-bam" target="_blank" rel="noopener" class="project">
           <img src="images/itchio/bam.png" alt="Too Hot For Bam" class="project-thumbnail">
           <div class="project-content">
             <h3>Too Hot For Bam</h3>
-            <p>Arcade challenge with heat mechanics.</p>
-            <a href="https://yiirii.itch.io/too-hot-for-bam" target="_blank" rel="noopener">Play on itch.io</a>
+            <p class="project-desc">Arcade challenge with heat mechanics.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="projects">
+      <h3>OTHER PROJECTS</h3>
+      <div class="projects-grid-detailed">
+
+        <div class="project other-project" onclick="openModal('modal1')">
+          <img src="images/itchio/ass.png" alt="Project 1" class="project-thumbnail">
+          <div class="project-content">
+            <h3>Prototype Alpha</h3>
+            <p class="project-desc">An experimental game prototype exploring dynamic level generation and procedural environments. Built with Unity, this project features real-time terrain deformation and adaptive AI behavior. Currently in early development stages with focus on core mechanics and player interaction systems.</p>
+          </div>
+        </div>
+
+        <div class="project other-project" onclick="openModal('modal2')">
+          <img src="images/itchio/fins.png" alt="Project 2" class="project-thumbnail">
+          <div class="project-content">
+            <h3>Neon Runner</h3>
+            <p class="project-desc">A fast-paced endless runner set in a cyberpunk cityscape. Players navigate through neon-lit obstacles while collecting power-ups and avoiding hazards. Features a dynamic soundtrack that adapts to gameplay intensity and a progression system with unlockable characters and abilities.</p>
+          </div>
+        </div>
+
+        <div class="project other-project" onclick="openModal('modal3')">
+          <img src="images/itchio/sugar.png" alt="Project 3" class="project-thumbnail">
+          <div class="project-content">
+            <h3>Puzzle Forge</h3>
+            <p class="project-desc">A puzzle game combining match-3 mechanics with crafting elements. Players solve increasingly complex puzzles to gather resources and create powerful items. The game features over 100 unique levels, multiple game modes, and a comprehensive achievement system with special challenges.</p>
+          </div>
+        </div>
+
+        <div class="project other-project" onclick="openModal('modal4')">
+          <img src="images/itchio/bam.png" alt="Project 4" class="project-thumbnail">
+          <div class="project-content">
+            <h3>Stellar Defense</h3>
+            <p class="project-desc">A tower defense game set in deep space where players defend their space station against waves of alien invaders. Strategic placement of defensive turrets and resource management are key. Includes campaign mode with branching storylines and an endless survival mode for competitive leaderboard rankings.</p>
           </div>
         </div>
 
       </div>
     </section>
+
+    <!-- Modal popups for OTHER PROJECTS -->
+    <div id="modal1" class="project-modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal('modal1')">&times;</span>
+        <h2>Prototype Alpha</h2>
+        <img src="images/itchio/ass.png" alt="Prototype Alpha" class="modal-image">
+        <div class="modal-details">
+          <h4>Project Overview</h4>
+          <p>An experimental game prototype exploring dynamic level generation and procedural environments. Built with Unity, this project features real-time terrain deformation and adaptive AI behavior.</p>
+          
+          <h4>Key Features</h4>
+          <ul>
+            <li>Procedural level generation with dynamic terrain</li>
+            <li>Adaptive AI behavior system</li>
+            <li>Real-time environment deformation</li>
+            <li>Advanced player interaction mechanics</li>
+          </ul>
+          
+          <h4>Development Status</h4>
+          <p>Currently in early development stages with focus on core mechanics and player interaction systems. Active prototyping and testing phase.</p>
+          
+          <h4>Technologies Used</h4>
+          <p>Unity Engine, C#, ProBuilder, NavMesh AI</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal2" class="project-modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Neon Runner</h2>
+        <img src="images/itchio/fins.png" alt="Neon Runner" class="modal-image">
+        <div class="modal-details">
+          <h4>Project Overview</h4>
+          <p>A fast-paced endless runner set in a cyberpunk cityscape. Players navigate through neon-lit obstacles while collecting power-ups and avoiding hazards.</p>
+          
+          <h4>Key Features</h4>
+          <ul>
+            <li>Dynamic soundtrack that adapts to gameplay intensity</li>
+            <li>Progression system with unlockable characters</li>
+            <li>Multiple power-ups and special abilities</li>
+            <li>Procedurally generated obstacles and hazards</li>
+            <li>Global leaderboard integration</li>
+          </ul>
+          
+          <h4>Art Style</h4>
+          <p>Vibrant cyberpunk aesthetic with neon lighting effects and futuristic architecture. Emphasis on visual clarity for fast-paced gameplay.</p>
+          
+          <h4>Technologies Used</h4>
+          <p>Unity Engine, Shader Graph, FMOD Audio, PlayFab Services</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal3" class="project-modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Puzzle Forge</h2>
+        <img src="images/itchio/sugar.png" alt="Puzzle Forge" class="modal-image">
+        <div class="modal-details">
+          <h4>Project Overview</h4>
+          <p>A puzzle game combining match-3 mechanics with crafting elements. Players solve increasingly complex puzzles to gather resources and create powerful items.</p>
+          
+          <h4>Key Features</h4>
+          <ul>
+            <li>Over 100 unique puzzle levels</li>
+            <li>Crafting system with 50+ craftable items</li>
+            <li>Multiple game modes (Story, Endless, Challenge)</li>
+            <li>Comprehensive achievement system</li>
+            <li>Special daily and weekly challenges</li>
+          </ul>
+          
+          <h4>Game Mechanics</h4>
+          <p>Match-3 puzzle solving generates resources used in the crafting system. Higher combos yield rare materials. Strategic planning required to optimize resource gathering.</p>
+          
+          <h4>Technologies Used</h4>
+          <p>Unity Engine, C#, DOTween, Custom Grid System</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal4" class="project-modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal('modal4')">&times;</span>
+        <h2>Stellar Defense</h2>
+        <img src="images/itchio/bam.png" alt="Stellar Defense" class="modal-image">
+        <div class="modal-details">
+          <h4>Project Overview</h4>
+          <p>A tower defense game set in deep space where players defend their space station against waves of alien invaders. Strategic placement of defensive turrets and resource management are key to survival.</p>
+          
+          <h4>Key Features</h4>
+          <ul>
+            <li>Campaign mode with branching storylines</li>
+            <li>Endless survival mode with competitive leaderboards</li>
+            <li>15+ unique tower types with upgrade paths</li>
+            <li>Strategic resource management system</li>
+            <li>Dynamic enemy AI with varied attack patterns</li>
+          </ul>
+          
+          <h4>Gameplay</h4>
+          <p>Players must balance offensive and defensive strategies while managing limited resources. Each tower type has strengths and weaknesses against different enemy types, requiring tactical thinking.</p>
+          
+          <h4>Technologies Used</h4>
+          <p>Unity Engine, AI Pathfinding, Particle Systems, Custom Tower System</p>
+        </div>
+      </div>
+    </div>
   </main>
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    // Close modal when clicking outside the content
+    window.onclick = function(event) {
+      if (event.target.classList.contains('project-modal')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.project-modal');
+        modals.forEach(modal => {
+          if (modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

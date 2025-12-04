@@ -143,19 +143,25 @@
 
     <section class="projects">
       <h3>INVOLVED PROJECTS</h3>
-      <div class="projects-grid">
-        <a class="project-link" href="game-projects.html">
-          <img src="images/itchio/ass.png" alt="Lost Fins screenshot">
-        </a>
-        <a class="project-link" href="game-projects.html">
-          <img src="images/itchio/bam.png" alt="Sugar Slasher screenshot">
-        </a>
-        <a class="project-link" href="game-projects.html">
-          <img src="images/itchio/fins.png" alt="Too Hot For Bam screenshot">
-        </a>
-        <a class="project-link" href="game-projects.html">
-          <img src="images/itchio/sugar.png" alt="Assimilation screenshot">
-        </a>
+      <div class="projects-carousel">
+        <button class="carousel-btn prev" aria-label="Previous project">‹</button>
+        <div class="projects-viewport">
+          <div class="projects-track">
+            <a class="project-link" href="game-projects.html">
+              <img src="images/itchio/ass.png" alt="Assimilation screenshot">
+            </a>
+            <a class="project-link" href="game-projects.html">
+              <img src="images/itchio/bam.png" alt="Too Hot For Bam screenshot">
+            </a>
+            <a class="project-link" href="game-projects.html">
+              <img src="images/itchio/fins.png" alt="Lost Fins screenshot">
+            </a>
+            <a class="project-link" href="game-projects.html">
+              <img src="images/itchio/sugar.png" alt="Sugar Slasher screenshot">
+            </a>
+          </div>
+        </div>
+        <button class="carousel-btn next" aria-label="Next project">›</button>
       </div>
       <a class="see-more" href="game-projects.html">see more ➤</a>
     </section>
@@ -232,6 +238,32 @@
       // init
       update();
       startAuto();
+    });
+
+    // Projects carousel: arrow button navigation
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousel = document.querySelector('.projects-carousel');
+      if (!carousel) return;
+      const track = carousel.querySelector('.projects-track');
+      const prevBtn = carousel.querySelector('.carousel-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-btn.next');
+      const links = Array.from(carousel.querySelectorAll('.project-link'));
+      let current = 0;
+
+      function updatePosition() {
+        const offset = -current * (12.5 + 1) * 16 * 1.3; // 12.5rem + 1rem gap, converted to px
+        track.style.transform = `translateX(${offset}px)`;
+      }
+
+      function goTo(index) {
+        current = Math.max(0, Math.min(index, links.length - 1));
+        updatePosition();
+      }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      updatePosition();
     });
   </script>
 </body>
