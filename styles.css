@@ -561,11 +561,11 @@ nav a:focus::after {
     transition: transform 420ms cubic-bezier(.2,.9,.2,1);
     will-change: transform;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .projects-track .project-link {
-    flex: 0 0 calc(20% - 0.875rem);
+    flex: 0 0 calc(25% - 0.875rem);
     display: block;
     border-radius: 0.5rem;
     overflow: hidden;
