@@ -135,6 +135,16 @@ nav a:focus::after {
   .socials img[alt="Sketchfab"]:hover { background: #00d5ff; }
   .socials img[alt="Itchio"]:hover { background: #ff002f; }
 
+  /* Responsive nav: switch to vertical column at medium screens */
+  @media (max-width: 56.25rem) {
+    nav {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-left: 0;
+      align-items: center;
+    }
+  }
+
   /* Responsive header: stack vertically only on very small screens */
   @media (max-width: 31.25rem) {
     header {
