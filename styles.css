@@ -306,6 +306,7 @@ nav a:focus::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-align: center;
   animation: colorShift 8s ease-in-out infinite;
 }
 
@@ -571,6 +572,7 @@ nav a:focus::after {
     box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.4);
     transition: transform 180ms ease, box-shadow 180ms ease;
     cursor: grab;
+    min-width: 0;
   }
 
   .projects-track .project-link:active {
@@ -1045,11 +1047,21 @@ nav a:focus::after {
   }
   @media (max-width: 56.25rem) {
     .sketchfab-placeholder { height: 20rem; }
+
+    /* Increase project thumbnail size on smaller screens */
+    .projects-track .project-link {
+      flex: 0 0 calc(33.33% - 0.875rem);
+    }
   }
 
   @media (max-width: 43.75rem) {
     .sketchfab-placeholder { height: 16.25rem; }
     .carousel-btn { width: 2.375rem; height: 2.375rem; font-size: 1.4375rem; }
+
+    /* Make project thumbnails even larger on mobile */
+    .projects-track .project-link {
+      flex: 0 0 calc(50% - 0.875rem);
+    }
   }
 
   /* Project modal popup styles */

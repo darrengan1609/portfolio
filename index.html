@@ -250,18 +250,40 @@
       const links = Array.from(carousel.querySelectorAll('.project-link'));
       let current = 0;
 
+      function getVisibleCount() {
+        const width = window.innerWidth;
+        if (width <= 700) return 2; // 43.75rem = 700px
+        if (width <= 900) return 3; // 56.25rem = 900px
+        return 5; // desktop shows 5 at 20% each
+      }
+
       function updatePosition() {
-        const offset = -current * (12.5 + 1) * 16 * 1.3; // 12.5rem + 1rem gap, converted to px
+        if (links.length === 0) return;
+        const firstLink = links[0];
+        const linkWidth = firstLink.offsetWidth;
+        const gap = 16 * 1.3; // 1rem gap converted to px
+        const offset = -current * (linkWidth + gap);
         track.style.transform = `translateX(${offset}px)`;
       }
 
       function goTo(index) {
-        current = Math.max(0, Math.min(index, links.length - 1));
+        const visibleCount = getVisibleCount();
+        const maxIndex = Math.max(0, links.length - visibleCount);
+        current = Math.max(0, Math.min(index, maxIndex));
         updatePosition();
       }
 
       prevBtn.addEventListener('click', () => goTo(current - 1));
       nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      // Update position on window resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          goTo(current); // recalculate with new screen size
+        }, 100);
+      });
 
       updatePosition();
     });
