@@ -270,7 +270,9 @@
         if (links.length === 0) return;
         const firstLink = links[0];
         const linkWidth = firstLink.offsetWidth;
-        const gap = 16 * 1.3; // 1rem gap converted to px
+        // Get actual computed gap from the track element
+        const computedStyle = window.getComputedStyle(track);
+        const gap = parseFloat(computedStyle.gap) || 0;
         const offset = -current * (linkWidth + gap);
         track.style.transform = `translateX(${offset}px)`;
       }
