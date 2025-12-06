@@ -1401,4 +1401,91 @@ nav a:focus::after {
       right: 1rem;
     }
   }
+
+/* Contact buttons */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.125rem solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  color: white;
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+
+.contact-btn img {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.4);
+}
+
+.contact-btn:hover img {
+  transform: scale(1.1);
+}
+
+/* Per-platform hover colors */
+.contact-linkedin:hover {
+  background: #0062ff;
+  border-color: #0062ff;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 98, 255, 0.4);
+}
+
+.contact-github:hover {
+  background: #ff6a00;
+  border-color: #ff6a00;
+  box-shadow: 0 0.5rem 1.25rem rgba(255, 106, 0, 0.4);
+}
+
+.contact-email:hover {
+  background: #4400ff;
+  border-color: #4400ff;
+  box-shadow: 0 0.5rem 1.25rem rgba(68, 0, 255, 0.4);
+}
+
+.contact-sketchfab:hover {
+  background: #00d5ff;
+  border-color: #00d5ff;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 213, 255, 0.4);
+}
+
+.contact-itchio:hover {
+  background: #ff002f;
+  border-color: #ff002f;
+  box-shadow: 0 0.5rem 1.25rem rgba(255, 0, 47, 0.4);
+}
+
+@media (max-width: 56.25rem) {
+  .contact-panel {
+    padding: 1.5rem;
+  }
+  
+  .contact-buttons {
+    max-width: 100%;
+  }
+}
   
