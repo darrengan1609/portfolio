@@ -47,13 +47,16 @@
 
     <!-- Full-bleed hero (profile + name) above About -->
     <section class="about-hero" aria-hidden="false">
-      <video class="about-hero-video" autoplay muted loop playsinline aria-hidden="true">
+      <video class="about-hero-video" autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload noremoteplayback" aria-hidden="true">
         <source src="images/montagevid.mp4" type="video/mp4">
       </video>
       <div class="about-hero-inner">
         <img src="images/profilepic.png" alt="Profile" class="about-hero-pic">
         <h1 class="about-hero-name">DARREN GAN WEI-SHARN</h1>
         <p class="about-hero-subtitle">3D Modelling Artist</p>
+        <a href="images/DarrenGanWei-SharnCV.pdf" download class="cv-download-btn">
+          <span class="download-icon"></span>view cv
+        </a>
       </div>
     </section>
 
@@ -68,13 +71,39 @@
           <p><strong>Focus:</strong> 3D modelling for both character and enviroment</p>
           <p><strong>Learning:</strong> character rigging and animation, 2D art</p>
           <p>I'm always eager to learn and experience new things and try new techniques, so come along with me on this journey improve my work as I grow as a creator!</p>
-          <h4>SKILLS</h4>
-          <ul class="skill-list">
-            <li class="skill-badge">Game Programming</li>
-            <li class="skill-badge">Team Leadership</li>
-            <li class="skill-badge">Game Coding</li>
-            <li class="skill-badge">Level Design</li>
-          </ul>
+          
+          <div class="skills-interests-row">
+            <div class="skills-col">
+              <h4>SKILLS</h4>
+              <ul class="skill-list">
+                <li class="skill-badge">3D Character Asset Creation</li>
+                <li class="skill-badge">3D Enviroment Asset Creation</li>
+                <li class="skill-badge">Basic 2D Tilemap Creation</li>
+                <li class="skill-badge">Basic Level Design</li>
+              </ul>
+            </div>
+            
+            <div class="interests-col">
+              <h4>INTERESTS</h4>
+              <div class="interests-grid">
+                <div class="interest-item">
+                  <img src="images/icons/IClinkedin.png" alt="Trekking" class="interest-icon">
+                  <span>Trekking</span>
+                </div>
+                <div class="interest-item">
+                  <img src="images/icons/ICgithub.png" alt="Editing" class="interest-icon">
+                  <span>Editing</span>
+                </div>
+                <div class="interest-item">
+                  <img src="images/icons/ICemail.png" alt="Gaming" class="interest-icon">
+                  <span>Gaming</span>
+                </div>
+              </div>
+              <a href="hobby-diary.html" class="artwork-diary-btn">
+                Ren's Hobby Diary
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="about-col about-right">
@@ -191,24 +220,66 @@
         <div class="about-col about-full">
           <h4>WORKSHOPS &amp; TALKS</h4>
           <ul class="experience-list">
-            <li><strong>PSSMY Beginner Training Program [Art]</strong> — Foundational art techniques and industry practices.</li>
-            <li><strong>Making it as a Concept Artist: Lessons, Portfolio & Career tips</strong> — Talk on career development and portfolio building strategies.</li>
+            <li class="workshop">
+              <strong>PSSMY Beginner Training Program [Art]</strong>
+              <span class="exp-meta">APR 2024 - MAY 2024</span>
+              <div class="exp-desc">
+                In this 4-day series workshop, learned industry-standard workflows for asset development, including topology optimization and polygon reduction techniques.<br><br>
+                Gained hands-on experience in reducing polycount while preserving visual quality and performance efficiency.
+              </div>
+            </li>
+            <li class="workshop">
+              <strong>Samsung University Hosted Leadership Talk</strong>
+              <span class="exp-meta">SEP 2025</span>
+              <div class="exp-desc">
+                Organized and hosted a university collaboration session with Samsung, focusing on internship opportunities and leadership development and internship awareness.<br><br>
+                Secretary in charge of scheduling and coordination between the organizing committee and Samsung representatives.
+              </div>
+            </li>
           </ul>
         </div>
 
         <div class="about-col about-full">
           <h4>GAME JAMS</h4>
           <ul class="experience-list">
-            <li><strong>Indie Game Jam 2025</strong> — 1st Place Winner.</li>
-            <li><strong>Red Game Jam 2025</strong> — Participation.</li>
-            <li><strong>Magical Girl GameJam 12</strong> — Participation.</li>
+            <li class="gamejam">
+              <strong>Indie Game Jam — 1st place winner</strong>
+              <span class="exp-meta">APR 2025</span>
+              <div class="exp-desc">
+                Main artist in charge of low poly cyber insect models and other key environmental assets.<br><br>
+                Responsible for coordinating art asset creation and asset production.
+              </div>
+            </li>
+            <li class="gamejam">
+              <strong>Red Games Jam</strong>
+              <span class="exp-meta">FEB 2025</span>
+              <div class="exp-desc">
+                2D artist in charge of drawing Ankha Basit sprites and other key prop assets.<br><br>
+                Designed the UI layout and assembled the flow of menus and UX0 functions.
+              </div>
+            </li>
+            <li class="gamejam">
+              <strong>Magical Girl GameJam 12</strong>
+              <span class="exp-meta">AUG 2025 - SEP 2025</span>
+              <div class="exp-desc">
+                Lead artist in charge of low poly cyber magic girl character and her broom/weapon.<br><br>
+                Set up the rigging for the character and broom, then integrated animation from Unity engine.
+              </div>
+            </li>
           </ul>
         </div>
 
         <div class="about-col about-full">
           <h4>WORKING EXPERIENCES</h4>
           <ul class="experience-list">
-            <li><strong>Freelance 3D Artist — B&amp;N Design Associate Sdn. Bhd.</strong> (May 2023 - Present) — Create 3D room environments from design sketches and floor plan drawings. Setup structural elements and environment lighting for photorealistic rendering.</li>
+            <li class="work">
+              <strong>Freelance for B&amp;M Design Associate Sdn. Bhd.</strong>
+              <span class="exp-meta">May 2023 - Present</span>
+              <div class="exp-desc">
+                Create 3D room environments from design sketches and floor plan drawings.<br><br>
+                Setup structural elements and environment lighting for photorealistic rendering.
+              </div>
+            </li>
           </ul>
         </div>
       </div>
