@@ -47,10 +47,153 @@
       <div class="about-panel" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 3rem;">
         <img src="images/cat.png" alt="Cat Icon" style="width: 6rem; height: 6rem; margin-bottom: 1.5rem;">
         <p style="color: #d7d7d7; font-size: 1.2rem; max-width: 40rem; line-height: 1.7;">
-          Welcome to Ren's Hobby Diary! As of now Ren is a bit busy so this page is under construction, so keep in tune! I promise to update it soon >.<
+          Welcome to Ren's Hobby Diary! This section is still under  constuction, so please bear with me as I work on adding more content and features. Stay tuned for updates!
         </p>
       </div>
     </section>
+
+    <!-- Featured Video Section -->
+    <section class="featured-video-section">
+      <h3>minecraft builds</h3>
+      <div class="featured-video-container">
+        <div class="featured-video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/6_96KpLB97s?si=Gl7YZKdhX9JGNQuz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="featured-video-info">
+          <h4 style="text-align: center;">ryo's cozy nook - serenity in luminescence</h4>
+          <p style="text-align: center;">Whenever I just want to relax and unwind, I boot up my Minecraft and start building away, its one of my favorite comfort games. 
+            I take inspiration from various tutorials and personify it with my own elements. 
+            <br><br>
+            This particular build is heavily cottage core inspired, with warm lighting and cozy aesthetics to create my chill and serene village.
+            <br>
+            All the color palette, interior, texturing and teraforming was all me, 100% my design pallete! I really enjoyed working on this project and I hope you all like it too! 
+            </p>
+          <p>
+            Version: Minecraft 1.21.10 <br>
+            Shader: BSL <br>
+            Mods: Iris, Fabric, Sodium <br>
+            Primary Resource Pack: jehkoba's villagers, nautilus 3D, better dogs, lily's revamped animals, bees reimagined
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Showcase Section -->
+    <section class="showcases">
+      <div class="category-header">
+        <h3>MY WORKS</h3>
+        <div class="category-toggle">
+          <button class="category-btn active" data-category="gaming">GAMING</button>
+          <button class="category-btn" data-category="misc-arts">MISC ARTS</button>
+        </div>
+      </div>
+
+      <!-- Gaming Category -->
+      <div class="category-content gaming-content active">
+        <div class="model-embed">
+          <h4 class="model-title">placeholder title</h4>
+          <div class="model-embed-row">
+            <div class="model-embed-left">
+              <div class="sketchfab-embed-wrapper">
+                <img src="images/comebacklater.png" alt="Coming Back Later" style="width: 100%; height: auto;">
+              </div>
+            </div>
+            <aside class="model-meta">
+              <ul class="meta-list">
+                <li>to be continued!</li>
+              </ul>
+            </aside>
+          </div>
+          <div class="model-description">
+            <p>in progress</p>
+          </div>
+        </div>
+
+        <div class="model-embed">
+          <h4 class="model-title">placeholder title</h4>
+          <div class="model-embed-row">
+            <div class="model-embed-left">
+              <div class="sketchfab-embed-wrapper">
+                <img src="images/comebacklater.png" alt="Coming Back Later" style="width: 100%; height: auto;">
+              </div>
+            </div>
+            <aside class="model-meta">
+              <ul class="meta-list">
+                <li>to be continued!</li>
+              </ul>
+            </aside>
+          </div>
+          <div class="model-description">
+            <p>in progress</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Misc Arts Category -->
+      <div class="category-content misc-arts-content">
+        <div class="model-embed">
+          <h4 class="model-title">placeholder title</h4>
+          <div class="model-embed-row">
+            <div class="model-embed-left">
+              <div class="sketchfab-embed-wrapper">
+                <img src="images/comebacklater.png" alt="Coming Back Later" style="width: 100%; height: auto;">
+              </div>
+            </div>
+            <aside class="model-meta">
+              <ul class="meta-list">
+                <li>to be continued!</li>
+              </ul>
+            </aside>
+          </div>
+          <div class="model-description">
+            <p>in progress</p>
+          </div>
+        </div>
+
+        <div class="model-embed">
+          <h4 class="model-title">placeholder title</h4>
+          <div class="model-embed-row">
+            <div class="model-embed-left">
+              <div class="sketchfab-embed-wrapper">
+                <img src="images/comebacklater.png" alt="Coming Back Later" style="width: 100%; height: auto;">
+              </div>
+            </div>
+            <aside class="model-meta">
+              <ul class="meta-list">
+                <li>to be continued!</li>
+              </ul>
+            </aside>
+          </div>
+          <div class="model-description">
+            <p>in progress</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <script>
+    // Category toggle functionality
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const categoryContents = document.querySelectorAll('.category-content');
+
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+        
+        // Update active button
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Update active content
+        categoryContents.forEach(content => {
+          content.classList.remove('active');
+          if (content.classList.contains(`${category}-content`)) {
+            content.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
